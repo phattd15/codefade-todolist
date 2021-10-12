@@ -2,18 +2,20 @@
 
 {% block content %}
 
-<h1>
+<div class="header-bar">
     task form
-</h1>
+</div>
 <!-- the url syntax takes back to the one in urlspattern with name='tasks' -->
-<a href="{% url 'tasks' %}">
+<a class="btn btn-dark" href="{% url 'tasks' %}">
     back
 </a>
 <form method="POST" action="">
     <!-- this is django form method, gonna look into later  -->
     {%csrf_token%}
+    <div class="form-group">
     {{form.as_p}} 
     <input type="submit" value="Submit">
+    </div>
 
 </form>
 
