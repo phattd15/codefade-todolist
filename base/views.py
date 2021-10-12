@@ -4,7 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
-from todo_list.models import Task
+from base.models import Task
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
@@ -13,7 +13,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
 class CustomLoginView(LoginView):
-    template_name = 'todo_list/login.html'
+    template_name = 'base/login.html'
     fields = '__all__'
     redirect_authenticated_user = True
 
@@ -21,7 +21,7 @@ class CustomLoginView(LoginView):
         return reverse_lazy('tasks')
 
 class RegisterPage(FormView):
-    template_name = 'todo_list/register.html'
+    template_name = 'base/register.html'
     form_class = UserCreationForm
     success_url = reverse_lazy('tasks')
 
@@ -37,7 +37,7 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).get(*args, **kwargs)
 
 class CustomLogoutView(LogoutView):
-    template_name = 'todo_list/logout.html'
+    template_name = 'base/logout.html'
     fields = '__all__'
     # next_page = 'login'
 
@@ -79,7 +79,7 @@ class TaskList(LoginRequiredMixin, ListView):
 class TaskDetail(DetailView):
     model = Task
     context_object_name = 'task'
-    template_name = 'todo_list/task.html'
+    template_name = 'base/task.html'
 
 # note: CreateView takes post request and push new data to the DB immediately
 class TaskCreate(CreateView):
