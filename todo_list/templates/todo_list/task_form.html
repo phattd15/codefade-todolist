@@ -1,0 +1,20 @@
+{% extends 'todo_list\\main.html' %}
+
+{% block content %}
+
+<h1>
+    task form
+</h1>
+<!-- the url syntax takes back to the one in urlspattern with name='tasks' -->
+<a href="{% url 'tasks' %}">
+    back
+</a>
+<form method="POST" action="">
+    <!-- this is django form method, gonna look into later  -->
+    {%csrf_token%}
+    {{form.as_p}} 
+    <input type="submit" value="Submit">
+
+</form>
+
+{% endblock content %}

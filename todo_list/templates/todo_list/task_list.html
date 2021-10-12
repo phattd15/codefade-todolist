@@ -1,0 +1,73 @@
+{% extends 'todo_list\\main.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<h1> Welcome, {{request.user}}! </h1>
+<a type="button" class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a type="button" class="btn btn-secondary" href="{% url 'login' %}">Login</a>
+{% endif %}
+<h1>
+    my to do list
+</h1>
+
+<div class="input-group">
+    <form method="GET">
+        <input class="form-control" type="text" name="search-area" value="{{search_input}}">
+        <input class="btn btn-secondary" type="submit" value="Search">
+        <a class="btn btn-success" href="{% url 'task-create'%}"> Add</a>
+    </form>
+</div>
+<hr>
+<div class="container">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    ID
+                </th>
+                <th scope="col">
+                    Title
+                </th>
+                <th scope="col">
+                    View
+                </th>
+                <th scope="col">
+                    Edit
+                </th>
+                <th scope="col">
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <th scope="row"> {{task.id}} </th>
+                <td>
+                    {{task.title}}
+                    {% if task.complete %}
+                    <span style="color:green"> COMPLETED </span>
+                    {% endif %}
+                    </p>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-info" href="{% url 'task' task.id %}">View</a>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-warning" href="{% url 'task-update' task.id %}">Update</a>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-danger" href="{% url 'task-delete' task.id %}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        
+        {% empty %}
+            <p> No item in list </p>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock content %}
