@@ -17,6 +17,10 @@
         <input class="form-control" type="text" name="search-area" value="{{search_input}}">
         <input class="btn btn-secondary" type="submit" value="Search">
         <a class="btn btn-success" href="{% url 'task-create'%}"> Add</a>
+        <input class="form-check-input" type="checkbox" value="{{sorted_by_date}}" name="sorted_by_date" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Sorted by oldest
+        </label>
     </form>
 </div>
 <hr>

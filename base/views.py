@@ -51,11 +51,19 @@ class TaskList(LoginRequiredMixin, ListView):
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         
         search_input = self.request.GET.get('search-area') or ''
+
         if search_input:
             context['tasks'] = context['tasks'].filter(title__icontains=search_input)
         
-        context['search_input'] = search_input
+        sorted_by_date = self.request.GET.get('sorted_by_date') or False
+        
+        print(sorted_by_date)
 
+        # if sorted_by_date:
+            # context['tasks'].sort(key=lambda x: x.created, reversed=True)
+
+        context['search_input'] = search_input
+        context['sorted_by_date'] = sorted_by_date
         return context
 
 # class TaskList(LoginRequiredMixin, ListView):

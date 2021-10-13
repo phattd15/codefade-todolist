@@ -1,3 +1,18 @@
-<h1>
-    Task: {{task}}
-</h1>
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+<a class="btn btn-primary" href="{% url 'tasks' %}"> Back </a>
+<div class="container">
+    <h1>Task: {{task.title}}</h1>
+</div>
+<hr>
+<div class="container">
+    <h2>Description: {{task.description}}</h2>
+</div>
+<hr>
+<div class="container">
+    <h2>Date: {{task.created}}</h2>
+</div>
+
+{% endblock content %}
