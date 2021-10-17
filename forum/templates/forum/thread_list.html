@@ -10,7 +10,10 @@
     </tr>
     {% for thread in threads %}
     <tr>
-        <td> {{thread}} </td>
+        <td> {{thread.title}} </td>
+        <td> {{thread.created}} </td>
+        <td> {{thread.updated}} </td>
+        <td> {{thread.description}} </td>
     </tr>
     {% empty %}
         <h3>no active thread</h3>

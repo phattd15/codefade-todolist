@@ -1,0 +1,23 @@
+<h1>
+    This is a thread. Last updated: {{last_update}}
+</h1>
+
+{% for comment in comments %}
+
+<p>
+    Created by: {{comment.creator}}
+</p>
+<p>
+    {{comment.message}}
+</p>
+
+{% endfor %}
+
+<form method="POST" action="">
+    {%csrf_token%}
+    <label for="creator">Creator:</label>
+    <input type="text" id="creator" name="creator" value="anonymous"><br>
+    <label for="message">Message:</label>
+    <input type="textarea" id="message" name="message"><br>
+    <input type="submit" value="Submit">
+</form>
