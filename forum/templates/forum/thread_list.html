@@ -2,20 +2,17 @@
     thread list
 </h1>
 <a type="button" href="{% url 'create_thread' %}">Create new thread</a>
-<table>
-    <tr>
-        <th>
-            thread
-        </th>
-    </tr>
+<div>
     {% for thread in threads %}
-    <tr>
-        <td> {{thread.title}} </td>
-        <td> {{thread.created}} </td>
-        <td> {{thread.updated}} </td>
-        <td> {{thread.description}} </td>
-    </tr>
+    <div>
+        <p> Title: {{thread.title}} </p>
+        <p> Last updated: {{thread.updated}} </p>
+        <p> {{thread.description}} </p>
+    </div>
+    <div>
+    <a type="button" href="{% url 'thread' thread.id %}">View this thread</a>
+    </div>
     {% empty %}
         <h3>no active thread</h3>
     {% endfor %}
-</table>
+</div>

@@ -3,21 +3,25 @@
 </h1>
 
 {% for comment in comments %}
-
+<div>
 <p>
-    Created by: {{comment.creator}}
+    Sent by: {{comment.creator}}
 </p>
 <p>
     {{comment.message}}
 </p>
-
+</div>
+<br>
 {% endfor %}
-
-<form method="POST" action="">
+<div>
+<h1> Post new comment: </h1>
+<form method="POST" action="" id="msgform">
     {%csrf_token%}
     <label for="creator">Creator:</label>
-    <input type="text" id="creator" name="creator" value="anonymous"><br>
+    <input type="textarea" id="creator" name="creator" value="anonymous"><br>
     <label for="message">Message:</label>
-    <input type="textarea" id="message" name="message"><br>
+    <textarea rows="4" cols="50" id="message" name="message"></textarea>
+    <br>
     <input type="submit" value="Submit">
 </form>
+</div>
