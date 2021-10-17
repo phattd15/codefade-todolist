@@ -1,0 +1,18 @@
+<h1>
+    thread list
+</h1>
+<a type="button" href="{% url 'create_thread' %}">Create new thread</a>
+<table>
+    <tr>
+        <th>
+            thread
+        </th>
+    </tr>
+    {% for thread in threads %}
+    <tr>
+        <td> {{thread}} </td>
+    </tr>
+    {% empty %}
+        <h3>no active thread</h3>
+    {% endfor %}
+</table>
