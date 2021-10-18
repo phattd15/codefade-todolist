@@ -1,0 +1,52 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content mytabcontent" id="task-scheduler">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-today">
+                    <div class="dashboard-header">
+                        <h2>Today</h2>
+                        <h4 class="today-date"></h4>
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </div>
+                <div class="col-4 col-task">
+                    <div class="dashboard-header">
+                        <h2>Task</h2>
+                        <a href="" class="btn btn-success"><i class="fas fa-plus"></i> New Task</a>
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </div>
+                <div class="col-4 col-exams">
+                    <div class="dashboard-header">
+                        <h2>Exams</h2>
+                        <a href="" class="btn btn-success"><i class="fas fa-plus"></i> New Exam</a>
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content mytabcontent">
+        <div class="container">
+            <div class="container" style="margin:auto">
+            <a class="btn btn-success" type="button" href="./todo"> todo list app</a>
+            <a class="btn btn-success" type="button" href="./forum"> forum app</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mytabcontent" id="buddy-finder">
+        <div class="container">
+            <h1>This is buddy finder page</h1>
+        </div>
+    </div>
+{% endblock content %}

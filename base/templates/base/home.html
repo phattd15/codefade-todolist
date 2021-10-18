@@ -1,8 +1,10 @@
 {% extends 'base/main.html' %}
+{% load static %}
 
 {% block content %}
-
+<!-- <img src="{% static 'base/thinking_cat.jpg'%}" alt="Girl in a jacket" width="500" height="600"> -->
+<div class="container ftnr" style="margin:auto">
 <a class="btn btn-success" type="button" href="./todo"> todo list app</a>
 <a class="btn btn-success" type="button" href="./forum"> forum app</a>
-
+</div>
 {% endblock content %}

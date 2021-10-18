@@ -1,7 +1,7 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-<div class="container">
+<div class="container ftnr">
 <h1>
     {{thread.title}}
 </h1>
@@ -13,9 +13,9 @@
 </p>
 </div>
 {% for comment in comments %}
-<div>
+<div class="container">
 <p>
-    Sent by: {{comment.creator}}
+    Sent by: {{comment.creator}} on {{comment.created}}
 </p>
 <p>
     {{comment.message}}

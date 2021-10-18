@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* ------- */
+/* Sidebar */
+/* ------- */
+
+.sidebar {
+    z-index: 1;
+    background: #17194C;
+    padding-top: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: calc(100% - 0%);
+    transition: all 0.5s ease;
+    user-select: none;
+    overflow-y: auto;
+}
+
+.sidebar .logo-details {
+    padding-left: 35px;
+    padding-bottom: 30px;
+}
+
+.sidebar .logo-details a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.sidebar .links{
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 35px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.sidebar .links:hover {
+    background: #fff;
+    color: #17194C;
+}
+
+.sidebar .links i {
+    padding-right: 10px;
+}
+
+/* ------- */
+/* Content */
+/* ------- */
+
+.content {
+    padding: 20px;
+    height: 100vh;
+    margin-left: 250px;
+    transition: 0.5s;
+}
+
+/* ---------- */
+/* Responsive */
+/* ---------- */
+
+.mobile-nav, .nav_bar {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin: 70px 0 0 0;
+        transition: 0s;
+    }
+
+    .content.active {
+        margin-top: 0;
+    }
+
+    /* --------------- */
+    /* Collapse Button */
+    /* --------------- */
+
+    #collapse-btn {
+        position: fixed;
+        top: 25px;
+        right: 40px;
+        z-index: 1;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    .nav_bar #collapse-btn:hover{
+        color: #23ADE5;
+    }
+
+    /* ------------- */
+    /* Moblie Header */
+    /* ------------- */
+
+    .nav_bar {
+        background: #17194C;
+        position: fixed;
+        top: 0;
+        height: 70px;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+    }
+    
+    .nav_bar .logo-details a {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* ------------- */
+    /* Moblie Navbar */
+    /* ------------- */
+
+    .mobile-nav {
+        background: #17194C;
+        z-index: 1;
+        margin-top: 70px;
+        padding-bottom: 20px;
+        user-select: none;
+        transition: all 0.5s; 
+    }
+
+    .mobile-nav .mobile-nav-items {
+        background: #17194C;
+
+        transition: all 0.5s ease;
+    }
+
+    .mobile-nav .mobile-nav-items a {
+        text-align: center;
+        text-decoration: none;
+        line-height: 60px;
+        color: #fff;
+        display: block;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav .mobile-nav-items a:hover {
+        background: #fff;
+        color: #17194C;
+    }
+
+    .mobile-nav.active {
+        display: block !important; 
+    }
+}
+
+/* i add something here */
+
+.main-holder {
+    background-color: rgb(226, 236, 233);
+    border: 3px solid black;
+    width: 800px;
+}
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background: goldenrod;
+}
+
+.ftnr {
+    max-width: 550px;
+    margin: auto;
+    background-color: #fff;
+    -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    margin-top: 40px;
+}

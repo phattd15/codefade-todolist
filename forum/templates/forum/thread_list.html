@@ -5,9 +5,9 @@
     Thread list
 </h1>
 <a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
-<div class="container">
+<div class="container ftnr">
     {% for thread in threads %}
-    <div class="container">
+    <div class="container ftnr">
         <p> Title: {{thread.title}} </p>
         <p> Last updated: {{thread.updated}} </p>
         <p> {{thread.description}} </p>

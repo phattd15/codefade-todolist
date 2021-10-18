@@ -16,3 +16,6 @@ from django.http import HttpResponse
 
 def HomePage(request):
     return render(request, 'base/home.html')
+
+def TeamPage(request):
+    return render(request, 'base/main2.html')
