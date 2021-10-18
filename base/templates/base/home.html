@@ -1,4 +1,8 @@
-<h1> home </h1>
+{% extends 'base/main.html' %}
 
-<a type="button" href="./todo"> todo list app</a>
-<a type="button" href="./forum"> forum app</a>
+{% block content %}
+
+<a class="btn btn-success" type="button" href="./todo"> todo list app</a>
+<a class="btn btn-success" type="button" href="./forum"> forum app</a>
+
+{% endblock content %}
