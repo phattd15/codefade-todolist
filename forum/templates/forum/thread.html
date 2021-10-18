@@ -1,7 +1,17 @@
-<h1>
-    This is a thread. Last updated: {{last_update}}
-</h1>
+{% extends 'base/main.html' %}
 
+{% block content %}
+<div class="container">
+<h1>
+    {{thread.title}}
+</h1>
+<p>
+    Created by: {{thread.creator}}
+</p>
+<p>
+    {{thread.description}}
+</p>
+</div>
 {% for comment in comments %}
 <div>
 <p>
@@ -11,10 +21,14 @@
     {{comment.message}}
 </p>
 </div>
-<br>
+<hr>
+{% empty %}
+<p>
+    No comment has been made.
+</p>
 {% endfor %}
 <div>
-<h1> Post new comment: </h1>
+<h3> Post new comment: </h3>
 <form method="POST" action="" id="msgform">
     {%csrf_token%}
     <label for="creator">Creator:</label>
@@ -25,3 +39,5 @@
     <input type="submit" value="Submit">
 </form>
 </div>
+
+{% endblock content %}

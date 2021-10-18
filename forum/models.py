@@ -14,11 +14,14 @@ class Thread(models.Model):
         return self.title
     
     class Meta:
-        ordering = ['updated']
+        ordering = ['-updated']
 
 class Comment(models.Model):
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE, null=True, blank=True)
     creator = models.CharField(max_length=30,null=False, blank=False, default="anonymous")
     message = models.TextField(null=False, blank=False)
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created']
 

@@ -42,6 +42,7 @@ def HandlingThread(request, pk):
     last_update = thread.updated
 
     context = {
+        'thread': thread,
         'comments': comments,
         'last_update': last_update
     }

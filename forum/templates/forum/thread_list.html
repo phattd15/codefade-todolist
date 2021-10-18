@@ -1,18 +1,22 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
 <h1>
-    thread list
+    Thread list
 </h1>
-<a type="button" href="{% url 'create_thread' %}">Create new thread</a>
-<div>
+<a class="btn btn-secondary" type="button" href="{% url 'create_thread' %}">Create new thread</a>
+<div class="container">
     {% for thread in threads %}
-    <div>
+    <div class="container">
         <p> Title: {{thread.title}} </p>
         <p> Last updated: {{thread.updated}} </p>
         <p> {{thread.description}} </p>
     </div>
     <div>
-    <a type="button" href="{% url 'thread' thread.id %}">View this thread</a>
+    <a class="btn btn-primary" type="button" href="{% url 'thread' thread.id %}">View this thread</a>
     </div>
     {% empty %}
         <h3>no active thread</h3>
     {% endfor %}
 </div>
+{% endblock content %}
